@@ -1,4 +1,4 @@
-export default class cl_Ingreso {
+export default class cl_mIngreso {
     constructor(){
         this.acumI= 0;
         this.cntP= 0;

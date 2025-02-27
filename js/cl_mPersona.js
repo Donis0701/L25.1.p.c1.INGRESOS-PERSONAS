@@ -1,5 +1,5 @@
-export default class cl_Persona {
-    constructor(nombre, ingreso) {
+export default class cl_mPersona {
+    constructor({nombre, ingreso}) {
         this._nombre = nombre;
         this._ingreso = ingreso;
     }

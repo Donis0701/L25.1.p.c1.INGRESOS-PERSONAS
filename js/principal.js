@@ -5,21 +5,14 @@ Se dispone de los siguientes datos de varias personas: (nombre, ingreso) (Mary, 
 Monto del ingreso menor: 75$
 Ingreso promedio: 130$*/
 
-import cl_Persona from "./cl_Persona.js";
-import cl_Ingreso from "./cl_ingreso.js";
-
-let persona = new cl_Persona("Mary", 150);
-let persona2 = new cl_Persona("Jose", 135);
-let persona3 = new cl_Persona("Carlos", 160);
-let persona4 = new cl_Persona("Pedro", 75);
-
-let ingreso = new cl_Ingreso();
-
-ingreso.procesarPersona(persona);
-ingreso.procesarPersona(persona2);
-ingreso.procesarPersona(persona3);  
-ingreso.procesarPersona(persona4);
-
-let salida = document.getElementById("salida");
-salida.innerHTML += `Monto del ingreso menor: ${ingreso.ingresoMenor()}$
-<br>Ingreso promedio: ${ingreso.promedio()}$`;
+import cl_mIngreso from "./cl_mIngreso.js";
+import cl_vIngreso from "./cl_vIngreso.js";
+import cl_controlador from "./cl_controlador.js";
+export default class cl_principal{
+    constructor(){
+        let modelo = new cl_mIngreso();
+        let vista = new cl_vIngreso();
+        let controlador = new cl_controlador(modelo,vista);
+        vista.controlador = controlador;
+    }
+}
